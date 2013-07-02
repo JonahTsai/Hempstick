@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Hempstick", "Hempstick\Hempstick.cproj", "{61FB4890-D5D6-4159-A4D9-08EB53B9F9E9}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "HempstickDue", "HempstickDue\HempstickDue.cproj", "{B2043C48-F951-4637-8F47-8E7D3D9B97A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61FB4890-D5D6-4159-A4D9-08EB53B9F9E9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{61FB4890-D5D6-4159-A4D9-08EB53B9F9E9}.Debug|ARM.Build.0 = Debug|ARM
+		{61FB4890-D5D6-4159-A4D9-08EB53B9F9E9}.Release|ARM.ActiveCfg = Release|ARM
+		{61FB4890-D5D6-4159-A4D9-08EB53B9F9E9}.Release|ARM.Build.0 = Release|ARM
+		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Debug|ARM.Build.0 = Debug|ARM
+		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Release|ARM.ActiveCfg = Release|ARM
+		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

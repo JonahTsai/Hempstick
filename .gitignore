@@ -1,0 +1,12 @@
+.o
+.elf
+.lss
+.bin
+.epp
+.hex
+.map
+.srec
+*.lck
+DEBUG/
+*~
+#*#
