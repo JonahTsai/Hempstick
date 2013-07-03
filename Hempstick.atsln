@@ -5,6 +5,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Hempstick", "Hempstick\Hemp
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "HempstickDue", "HempstickDue\HempstickDue.cproj", "{B2043C48-F951-4637-8F47-8E7D3D9B97A5}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Hempstick_SAM4S_XPLAINED_PRO", "Hempstick_SAM4S_XPLAINED_PRO\Hempstick_SAM4S_XPLAINED_PRO.cproj", "{1089F4A4-9A51-49F6-8B5C-70DA38D8BDAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -19,6 +21,10 @@ Global
 		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Debug|ARM.Build.0 = Debug|ARM
 		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Release|ARM.ActiveCfg = Release|ARM
 		{B2043C48-F951-4637-8F47-8E7D3D9B97A5}.Release|ARM.Build.0 = Release|ARM
+		{1089F4A4-9A51-49F6-8B5C-70DA38D8BDAE}.Debug|ARM.ActiveCfg = Debug|ARM
+		{1089F4A4-9A51-49F6-8B5C-70DA38D8BDAE}.Debug|ARM.Build.0 = Debug|ARM
+		{1089F4A4-9A51-49F6-8B5C-70DA38D8BDAE}.Release|ARM.ActiveCfg = Release|ARM
+		{1089F4A4-9A51-49F6-8B5C-70DA38D8BDAE}.Release|ARM.Build.0 = Release|ARM
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
