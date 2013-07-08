@@ -86,20 +86,51 @@ void joystick_adc_task(void* parameters) {
 		g_rtos_joystick_control.joystick_report[12] = adc3_value & 0x00FF;
 		g_rtos_joystick_control.joystick_report[13] = (adc3_value & 0xFF00) >> 8;
 
-#elif defined(CONF_BOARD_SAM4S_XPLAIN_PRO)		
-		uint16_t adc1_value = 0, adc2_value = 0, adc3_value = 0;
+#elif defined(CONF_BOARD_SAM4S_XPLAIN_PRO)
+		uint16_t adc0_value, adc4_value, adc5_value, adc7_value, adc8_value, adc9_value, adc13_value, adc14_value;
 		
-		adc1_value = g_adc_data.data[4];
-		adc2_value = g_adc_data.data[5];
-		adc3_value = g_adc_data.data[9];
-		g_rtos_joystick_control.joystick_report[8] = adc1_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[9] = (adc1_value & 0xFF00) >> 8;
+		adc0_value = g_adc_data.data[0];
+		adc4_value = g_adc_data.data[4];
+		adc5_value = g_adc_data.data[5];
+		adc7_value = g_adc_data.data[7];
+		adc8_value = g_adc_data.data[8];
+		adc9_value = g_adc_data.data[9];
+		adc13_value = g_adc_data.data[13];
+		adc14_value = g_adc_data.data[14];
+		
+		// X
+		g_rtos_joystick_control.joystick_report[8] = adc0_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[9] = (adc0_value & 0xFF00) >> 8;
 	
-		g_rtos_joystick_control.joystick_report[10] = adc2_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[11] = (adc2_value & 0xFF00) >> 8;
+		// Y
+		g_rtos_joystick_control.joystick_report[10] = adc8_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[11] = (adc8_value & 0xFF00) >> 8;
 	
-		g_rtos_joystick_control.joystick_report[12] = adc3_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[13] = (adc3_value & 0xFF00) >> 8;
+		// Z
+		g_rtos_joystick_control.joystick_report[12] = adc9_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[13] = (adc9_value & 0xFF00) >> 8;
+		
+		// Rx
+		g_rtos_joystick_control.joystick_report[14] = adc4_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[15] = (adc4_value & 0xFF00) >> 8;
+		
+		// Ry
+		g_rtos_joystick_control.joystick_report[16] = adc5_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[17] = (adc5_value & 0xFF00) >> 8;
+		
+		// Rz
+		g_rtos_joystick_control.joystick_report[18] = adc13_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[19] = (adc13_value & 0xFF00) >> 8;
+		
+		// Slider
+		g_rtos_joystick_control.joystick_report[20] = adc14_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[21] = (adc14_value & 0xFF00) >> 8;
+		
+		// Dial
+		g_rtos_joystick_control.joystick_report[22] = adc7_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[23] = (adc7_value & 0xFF00) >> 8;
+		
+		
 #endif
 		xSemaphoreGive(g_adc_data.mutex);
 		
@@ -118,6 +149,9 @@ void joystick_button_task(void* parameters) {
 		xSemaphoreTake(g_rtos_joystick_control.mutex, portMAX_DELAY); // lock down the joystick report buffer		
 		xSemaphoreTake(g_rtos_button_data.mutex, portMAX_DELAY);
 		size_t array_max_idx = g_rtos_button_data.num_button / 8;
+		if((g_rtos_button_data.num_button % 8) == 0) {
+			array_max_idx--;
+		}
 		uint8_t current_button_value = 0;
 		for(size_t i = 0; i <= array_max_idx; i++) {
 			current_button_value = g_rtos_button_data.data[i];

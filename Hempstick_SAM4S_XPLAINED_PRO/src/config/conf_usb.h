@@ -56,7 +56,7 @@
 //! Device definition (mandatory)
 #define  USB_DEVICE_VENDOR_ID             0x44F
 #define  USB_DEVICE_PRODUCT_ID            0xB10A
-#define  USB_DEVICE_MAJOR_VERSION         6
+#define  USB_DEVICE_MAJOR_VERSION         8
 #define  USB_DEVICE_MINOR_VERSION         0
 #define  USB_DEVICE_POWER                 100 // Consumption on Vbus line (mA)
 #define  USB_DEVICE_ATTR                  \
@@ -84,10 +84,10 @@
 //@}
 
 // The HID report descriptor's size, in bytes.
-#define HID_REPORT_DESCRIPTOR_SIZE		57
+#define HID_REPORT_DESCRIPTOR_SIZE		61
 
 // The HID report itself's size, in bytes.
-#define UDI_HID_JOYSTICK_REPORT_SIZE	14
+#define UDI_HID_JOYSTICK_REPORT_SIZE	24
 
 /**
  * USB Device Callbacks definitions (Optional)

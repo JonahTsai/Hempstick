@@ -4,7 +4,7 @@
  * Created: 6/21/2013 10:07:41 PM
  *  Author: Jonah Tsai
  */ 
-
+#include "conf_hempstead.h"
 #include "rtos_hw_pin_configuration.h"
 #include "rtos_button.h"
 #include "rtos_adc.h"
@@ -123,8 +123,8 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[0].button_conf[11].flags =  0x0000,
 	.ports[0].button_conf[12].flags =  0x0000,
 	.ports[0].button_conf[13].flags =  0x0000,
-	.ports[0].button_conf[14].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[14].data_position = 25,
-	.ports[0].button_conf[15].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[15].data_position = 26,
+	.ports[0].button_conf[14].flags =  0x0000,
+	.ports[0].button_conf[15].flags =  0x0000,
 	.ports[0].button_conf[16].flags =  0x0000,
 	.ports[0].button_conf[17].flags =  0x0000,
 	.ports[0].button_conf[18].flags =  0x0000,
@@ -170,8 +170,7 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[1].button_conf[23].flags =  0x0000,
 	.ports[1].button_conf[24].flags =  0x0000,
 	.ports[1].button_conf[25].flags =  0x0000,
-	.ports[1].button_conf[26].flags = RTOS_BUTTON_PIN_ENABLED_MASK, .ports[1].button_conf[26].data_position = 24,
-	//.ports[1].button_conf[26].flags =  0x0000,
+	.ports[1].button_conf[26].flags =  0x0000,
 	.ports[1].button_conf[27].flags =  0x0000,
 	.ports[1].button_conf[28].flags =  0x0000,
 	.ports[1].button_conf[29].flags =  0x0000,
@@ -215,8 +214,8 @@ rtos_button_data_t g_rtos_button_data = {
 #endif
 
 #ifdef ID_PIOD
-	.ports[3].button_conf[0].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[3].button_conf[0].data_position = 27,
-	.ports[3].button_conf[1].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[3].button_conf[1].data_position = 28,
+	.ports[3].button_conf[0].flags =  0x0000,
+	.ports[3].button_conf[1].flags =  0x0000,
 	.ports[3].button_conf[2].flags =  0x0000,
 	.ports[3].button_conf[3].flags =  0x0000,
 	.ports[3].button_conf[4].flags =  0x0000,
@@ -324,7 +323,7 @@ rtos_button_data_t g_rtos_button_data = {
 rtos_adc_data_type g_adc_data = {
 	.data = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 #ifdef CONF_BOARD_SAM4S_XPLAIN_PRO
-	.channel_flags = {0, 0, 0, 0, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, 0, 0, 0},
+	.channel_flags = {ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0},
 #elif defined(CONF_BOARD_ARDUINO_DUE)
 	.channel_flags = {0, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 #endif

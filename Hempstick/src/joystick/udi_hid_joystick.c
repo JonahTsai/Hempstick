@@ -206,6 +206,7 @@ bool udi_hid_joystick_send_report(uint8_t* incoming_report)
 
 	bool rc = false;
 	irqflags_t flags = cpu_irq_save();
+	size_t report_size = UDI_HID_JOYSTICK_REPORT_SIZE;
 
 	memcpy(udi_hid_joystick_report_trans, last_report, UDI_HID_JOYSTICK_REPORT_SIZE);
 	udi_hid_joystick_b_report_valid = true;

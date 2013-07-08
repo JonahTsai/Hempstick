@@ -10,6 +10,7 @@
 #define CONF_HEMPSTEAD_H_
 
 #define	CONF_BOARD_SAM4S_XPLAIN_PRO						1
+#undef CONF_BOARD_ARDUINO_DUE
 
 // PIN Configuration
 #ifdef CONF_BOARD_SAM4S_XPLAIN_PRO

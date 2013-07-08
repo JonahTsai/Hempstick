@@ -436,16 +436,16 @@
     <GenerateEepFile>True</GenerateEepFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\config\conf_hempstead.c">
+    <Compile Include="src\config\example_conf_hempstead.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\config\conf_hempstead.h">
+    <Compile Include="src\config\example_conf_hempstead.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\config\conf_usb.c">
+    <Compile Include="src\config\example_conf_usb.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\config\conf_usb.h">
+    <Compile Include="src\config\example_conf_usb.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\joystick\rtos_joystick.c">
@@ -478,10 +478,10 @@
     <None Include="src\asf.h">
       <SubType>compile</SubType>
     </None>
-    <None Include="src\config\conf_board.h">
+    <None Include="src\config\example_conf_board.h">
       <SubType>compile</SubType>
     </None>
-    <None Include="src\config\conf_clock.h">
+    <None Include="src\config\example_conf_clock.h">
       <SubType>compile</SubType>
     </None>
     <None Include="src\joystick\TestHempJoy2.hid">
