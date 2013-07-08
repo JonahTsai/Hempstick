@@ -84,10 +84,10 @@
 //@}
 
 // The HID report descriptor's size, in bytes.
-#define HID_REPORT_DESCRIPTOR_SIZE		57
+#define HID_REPORT_DESCRIPTOR_SIZE		61
 
 // The HID report itself's size, in bytes.
-#define UDI_HID_JOYSTICK_REPORT_SIZE	14
+#define UDI_HID_JOYSTICK_REPORT_SIZE	24
 
 /**
  * USB Device Callbacks definitions (Optional)

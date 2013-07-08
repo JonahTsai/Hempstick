@@ -72,20 +72,48 @@ void joystick_adc_task(void* parameters) {
 		xSemaphoreTake(g_adc_data.mutex, portMAX_DELAY); // lock down the data protection mutex	
 		
 #ifdef CONF_BOARD_ARDUINO_DUE
-		uint16_t adc1_value = 0, adc2_value = 0, adc3_value = 0;
+		uint16_t adc0_value, adc1_value, adc2_value, adc3_value, adc4_value, adc5_value, adc6_value, adc7_value;
 		
+		adc0_value = g_adc_data.data[0];
 		adc1_value = g_adc_data.data[1];
 		adc2_value = g_adc_data.data[2];
 		adc3_value = g_adc_data.data[3];
-		g_rtos_joystick_control.joystick_report[8] = adc1_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[9] = (adc1_value & 0xFF00) >> 8;
+		adc4_value = g_adc_data.data[4];
+		adc5_value = g_adc_data.data[5];
+		adc6_value = g_adc_data.data[6];
+		adc7_value = g_adc_data.data[7];
 		
-		g_rtos_joystick_control.joystick_report[10] = adc2_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[11] = (adc2_value & 0xFF00) >> 8;
+		// X
+		g_rtos_joystick_control.joystick_report[8] = adc0_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[9] = (adc0_value & 0xFF00) >> 8;
+	
+		// Y
+		g_rtos_joystick_control.joystick_report[10] = adc1_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[11] = (adc1_value & 0xFF00) >> 8;
+	
+		// Z
+		g_rtos_joystick_control.joystick_report[12] = adc2_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[13] = (adc2_value & 0xFF00) >> 8;
 		
-		g_rtos_joystick_control.joystick_report[12] = adc3_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[13] = (adc3_value & 0xFF00) >> 8;
-
+		// Rx
+		g_rtos_joystick_control.joystick_report[14] = adc3_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[15] = (adc3_value & 0xFF00) >> 8;
+		
+		// Ry
+		g_rtos_joystick_control.joystick_report[16] = adc4_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[17] = (adc4_value & 0xFF00) >> 8;
+		
+		// Rz
+		g_rtos_joystick_control.joystick_report[18] = adc5_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[19] = (adc5_value & 0xFF00) >> 8;
+		
+		// Slider
+		g_rtos_joystick_control.joystick_report[20] = adc6_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[21] = (adc6_value & 0xFF00) >> 8;
+		
+		// Dial
+		g_rtos_joystick_control.joystick_report[22] = adc7_value & 0x00FF;
+		g_rtos_joystick_control.joystick_report[23] = (adc7_value & 0xFF00) >> 8;
 #elif defined(CONF_BOARD_SAM4S_XPLAIN_PRO)
 		uint16_t adc0_value, adc4_value, adc5_value, adc7_value, adc8_value, adc9_value, adc13_value, adc14_value;
 		

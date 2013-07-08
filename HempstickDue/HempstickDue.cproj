@@ -254,14 +254,14 @@
       </StimuliFile>
       <Channel>
         <host>127.0.0.1</host>
-        <port>49254</port>
+        <port>49911</port>
         <ssl>False</ssl>
       </Channel>
       <ToolOptions>
         <InterfaceName>JTAG</InterfaceName>
         <InterfaceProperties>
-          <JtagDbgClock>11770000</JtagDbgClock>
-          <SwdClock>4000000</SwdClock>
+          <JtagDbgClock>12000000</JtagDbgClock>
+          <SwdClock>0</SwdClock>
           <JtagProgClock>7500000</JtagProgClock>
           <IspClock>150000</IspClock>
           <JtagInChain>false</JtagInChain>
@@ -679,9 +679,6 @@
     <None Include="..\Hempstick\src\joystick\TestHempJoy2.hid">
       <SubType>compile</SubType>
       <Link>src\joystick\TestHempJoy2.hid</Link>
-    </None>
-    <None Include="Hempstick_SAM4S_XPLAINED_PRO.cproj">
-      <SubType>compile</SubType>
     </None>
     <None Include="src\ASF\common\services\sleepmgr\sleepmgr.h">
       <SubType>compile</SubType>
