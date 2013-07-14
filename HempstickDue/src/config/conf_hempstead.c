@@ -191,9 +191,9 @@ rtos_button_data_t g_rtos_button_data = {
 #ifdef ID_PIOD
 	.ports[3].button_conf[0].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[3].button_conf[0].data_position = 27,
 	.ports[3].button_conf[1].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[3].button_conf[1].data_position = 28,
-	.ports[3].button_conf[2].flags =  0x0000,
-	.ports[3].button_conf[3].flags =  0x0000,
-	.ports[3].button_conf[4].flags =  0x0000,
+	.ports[3].button_conf[2].flags =  RTOS_BUTTON_PIN_ENABLED_MASK,  .ports[3].button_conf[2].data_position = 29,
+	.ports[3].button_conf[3].flags =  RTOS_BUTTON_PIN_ENABLED_MASK,  .ports[3].button_conf[3].data_position = 30,
+	.ports[3].button_conf[4].flags =  RTOS_BUTTON_PIN_ENABLED_MASK,  .ports[3].button_conf[4].data_position = 31,
 	.ports[3].button_conf[5].flags =  0x0000,
 	.ports[3].button_conf[6].flags =  0x0000,
 	.ports[3].button_conf[7].flags =  0x0000,
