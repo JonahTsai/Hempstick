@@ -10,6 +10,7 @@
 #define CONF_HEMPSTEAD_H_
 
 #define	CONF_BOARD_ARDUINO_DUE						1
+#define CONF_ENABLE_TM_STICK						0
 
 // PIN Configuration
 #ifdef CONF_BOARD_SAM4S_XPLAIN_PRO
@@ -19,9 +20,13 @@
 #	define CONF_SSC_CLOCK_TC								TC1
 #	define CONF_SSC_CLOCK_CHANNEL							1
 #elif defined(CONF_BOARD_ARDUINO_DUE)
-#	define CONF_NUM_PINS									22
-#	define CONF_TOTAL_NUM_BUTTONS							28
-// #	define LED0_GPIO										PIO_PC23_IDX
+#	if CONF_ENABLE_TM_STICK
+#		define CONF_NUM_PINS								22
+#		define CONF_TOTAL_NUM_BUTTONS						28
+#	else
+#		define CONF_NUM_PINS								49
+#		define CONF_TOTAL_NUM_BUTTONS						32
+#	endif
 #	define CONF_SSC_CLOCK_SOURCE_ID							ID_TC8
 #	define CONF_SSC_CLOCK_TC								TC2
 #	define CONF_SSC_CLOCK_CHANNEL							2

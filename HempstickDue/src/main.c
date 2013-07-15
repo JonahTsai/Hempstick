@@ -84,24 +84,11 @@ static void setup_hardware(void)
 	board_init();
 	
 	configure_pins();
-	
+#if CONF_ENABLE_TM_STICK
 	rtos_joystick_init(true);
-	/*
-	rtos_button_init(1);
-	
-	
-	tm_stick_init(1000000);
-	
-	mlx90363_init(2); // 500Hz so we not only conforms to MLX90363's timing, we get as much data rate as we can push it.
-	
-	// configure_time_trigger_for_adc(2000);
-	uint8_t adc_channel_flags[MAX_ADC_CHANNEL] = {ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, ADC_CHANNEL_ENABLE_MASK, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	init_adc_data(ADC_PDC_ENABLE_MASK, adc_channel_flags);
-	start_adc(2000);
-	*/
-
-	/* Perform any initialization required by the partest LED IO functions. */
-	// vParTestInitialise();
+#else
+	rtos_joystick_init(false);
+#endif
 }
 
 
