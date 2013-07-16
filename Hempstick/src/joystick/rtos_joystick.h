@@ -1,4 +1,21 @@
 /*
+ * Copyright (C) 2013 Jonah Tsai
+ *
+ * This file is part of Hempstick.
+ *
+ * Hempstick is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Hemmpstick is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Hempstick.  If not, see <http://www.gnu.org/licenses/>.
+ *
  * rtos_joystick.h
  *
  * Created: 6/9/2013 5:54:24 PM
