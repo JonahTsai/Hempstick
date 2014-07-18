@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.1</ProjectVersion>
+    <ProjectVersion>6.2</ProjectVersion>
     <ProjectGuid>{1089f4a4-9a51-49f6-8b5c-70da38d8bdae}</ProjectGuid>
     <Name>Hempstick_SAM4S_XPLAINED_PRO</Name>
     <AssemblyName>$(MSBuildProjectName)</AssemblyName>
@@ -252,7 +252,7 @@
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_edbg>
       <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
-      <ToolName>XPRO-EDBG</ToolName>
+      <ToolName>EDBG</ToolName>
       <ToolNumber>ATML1803040200000142</ToolNumber>
       <StimuliFile>
       </StimuliFile>
@@ -264,12 +264,12 @@
       <ToolOptions>
         <InterfaceName>SWD</InterfaceName>
         <InterfaceProperties>
-          <JtagDbgClock>0</JtagDbgClock>
+          <JtagDbgClock>12000000</JtagDbgClock>
           <SwdClock>12000000</SwdClock>
           <JtagProgClock>4000000</JtagProgClock>
           <IspClock>150000</IspClock>
           <JtagInChain>false</JtagInChain>
-          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagEnableExtResetOnStartSession>true</JtagEnableExtResetOnStartSession>
           <JtagDevicesBefore>0</JtagDevicesBefore>
           <JtagDevicesAfter>0</JtagDevicesAfter>
           <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
@@ -357,45 +357,6 @@
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam/utils/linker_scripts/sam4s/sam4sd32/gcc/flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
-  <armgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/ASF/common/boards</Value>
-      <Value>../src/ASF/common/services/clock</Value>
-      <Value>../src/ASF/common/services/gpio</Value>
-      <Value>../src/ASF/common/services/ioport</Value>
-      <Value>../src/ASF/common/utils</Value>
-      <Value>../src/ASF/sam/boards</Value>
-      <Value>../src/ASF/sam/boards/sam4s_xplained_pro</Value>
-      <Value>../src/ASF/sam/drivers/pio</Value>
-      <Value>../src/ASF/sam/drivers/pmc</Value>
-      <Value>../src/ASF/sam/drivers/wdt</Value>
-      <Value>../src/ASF/sam/utils</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam4s/include</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam4s/source/templates</Value>
-      <Value>../src/ASF/sam/utils/header_files</Value>
-      <Value>../src/ASF/sam/utils/preprocessor</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Include</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Lib/GCC</Value>
-      <Value>../src/config</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4s\include</Value>
-      <Value>../src/ASF/sam/drivers/adc</Value>
-      <Value>../src/ASF/sam/drivers/ssc</Value>
-      <Value>../src/ASF/sam/drivers/tc</Value>
-      <Value>../src/ASF/common/services/sleepmgr</Value>
-      <Value>../src/ASF/common/services/usb</Value>
-      <Value>../src/ASF/common/services/usb/class/hid</Value>
-      <Value>../src/ASF/common/services/usb/class/hid/device</Value>
-      <Value>../src/ASF/common/services/usb/class/hid/device/mouse</Value>
-      <Value>../src/ASF/common/services/usb/udc</Value>
-      <Value>../src/ASF/sam/drivers/udp</Value>
-      <Value>../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/arm_cm3</Value>
-      <Value>../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include</Value>
-    </ListValues>
-  </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM4=true -DBOARD=SAM4S_XPLAINED_PRO -D__SAM4SD32C__ -Dprintf=iprintf -DUDD_ENABLE</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
@@ -522,45 +483,6 @@
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam/utils/linker_scripts/sam4s/sam4sd32/gcc/flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
-  <armgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/ASF/common/boards</Value>
-      <Value>../src/ASF/common/services/clock</Value>
-      <Value>../src/ASF/common/services/gpio</Value>
-      <Value>../src/ASF/common/services/ioport</Value>
-      <Value>../src/ASF/common/utils</Value>
-      <Value>../src/ASF/sam/boards</Value>
-      <Value>../src/ASF/sam/boards/sam4s_xplained_pro</Value>
-      <Value>../src/ASF/sam/drivers/pio</Value>
-      <Value>../src/ASF/sam/drivers/pmc</Value>
-      <Value>../src/ASF/sam/drivers/wdt</Value>
-      <Value>../src/ASF/sam/utils</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam4s/include</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam4s/source/templates</Value>
-      <Value>../src/ASF/sam/utils/header_files</Value>
-      <Value>../src/ASF/sam/utils/preprocessor</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Include</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Lib/GCC</Value>
-      <Value>../src/config</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4s\include</Value>
-      <Value>../src/ASF/sam/drivers/adc</Value>
-      <Value>../src/ASF/sam/drivers/ssc</Value>
-      <Value>../src/ASF/sam/drivers/tc</Value>
-      <Value>../src/ASF/common/services/sleepmgr</Value>
-      <Value>../src/ASF/common/services/usb</Value>
-      <Value>../src/ASF/common/services/usb/class/hid</Value>
-      <Value>../src/ASF/common/services/usb/class/hid/device</Value>
-      <Value>../src/ASF/common/services/usb/class/hid/device/mouse</Value>
-      <Value>../src/ASF/common/services/usb/udc</Value>
-      <Value>../src/ASF/sam/drivers/udp</Value>
-      <Value>../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/arm_cm3</Value>
-      <Value>../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include</Value>
-    </ListValues>
-  </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM4=true -DBOARD=SAM4S_XPLAINED_PRO -D__SAM4SD32C__ -Dprintf=iprintf -DUDD_ENABLE</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>

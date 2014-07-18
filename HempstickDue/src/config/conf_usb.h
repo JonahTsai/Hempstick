@@ -89,6 +89,12 @@
 // The HID report itself's size, in bytes.
 #define UDI_HID_JOYSTICK_REPORT_SIZE	24
 
+// You must calculate the byte in the HID report about where the ADC report starts, and tell the module where the byte offset starts. The index starts with 0.
+#define HID_JOYSTICK_REPORT_ADC_BYTE_OFFSET		8
+
+// You must tell it how many ADC axes you have in the HID report.
+#define HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES	8
+
 /**
  * USB Device Callbacks definitions (Optional)
  * @{

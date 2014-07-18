@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.1</ProjectVersion>
+    <ProjectVersion>6.2</ProjectVersion>
     <ProjectGuid>{61fb4890-d5d6-4159-a4d9-08eb53b9f9e9}</ProjectGuid>
     <Name>$(MSBuildProjectName)</Name>
     <AssemblyName>$(MSBuildProjectName)</AssemblyName>
@@ -251,32 +251,6 @@
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam/utils/linker_scripts/sam3x/sam3x8/gcc/flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
-  <armgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/ASF/common/boards</Value>
-      <Value>../src/ASF/common/services/clock</Value>
-      <Value>../src/ASF/common/services/gpio</Value>
-      <Value>../src/ASF/common/services/ioport</Value>
-      <Value>../src/ASF/common/utils</Value>
-      <Value>../src/ASF/sam/boards</Value>
-      <Value>../src/ASF/sam/boards/arduino_due_x</Value>
-      <Value>../src/ASF/sam/drivers/pio</Value>
-      <Value>../src/ASF/sam/drivers/pmc</Value>
-      <Value>../src/ASF/sam/utils</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam3x/include</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam3x/source/templates</Value>
-      <Value>../src/ASF/sam/utils/header_files</Value>
-      <Value>../src/ASF/sam/utils/preprocessor</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Include</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Lib/GCC</Value>
-      <Value>../src/config</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
-    </ListValues>
-  </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM3=true -DBOARD=ARDUINO_DUE_X -D__SAM3X8E__ -Dprintf=iprintf</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
@@ -375,32 +349,6 @@
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam/utils/linker_scripts/sam3x/sam3x8/gcc/flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
-  <armgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/ASF/common/boards</Value>
-      <Value>../src/ASF/common/services/clock</Value>
-      <Value>../src/ASF/common/services/gpio</Value>
-      <Value>../src/ASF/common/services/ioport</Value>
-      <Value>../src/ASF/common/utils</Value>
-      <Value>../src/ASF/sam/boards</Value>
-      <Value>../src/ASF/sam/boards/arduino_due_x</Value>
-      <Value>../src/ASF/sam/drivers/pio</Value>
-      <Value>../src/ASF/sam/drivers/pmc</Value>
-      <Value>../src/ASF/sam/utils</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam3x/include</Value>
-      <Value>../src/ASF/sam/utils/cmsis/sam3x/source/templates</Value>
-      <Value>../src/ASF/sam/utils/header_files</Value>
-      <Value>../src/ASF/sam/utils/preprocessor</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Include</Value>
-      <Value>../src/ASF/thirdparty/CMSIS/Lib/GCC</Value>
-      <Value>../src/config</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
-      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam3xa\include</Value>
-    </ListValues>
-  </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM3=true -DBOARD=ARDUINO_DUE_X -D__SAM3X8E__ -Dprintf=iprintf</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>

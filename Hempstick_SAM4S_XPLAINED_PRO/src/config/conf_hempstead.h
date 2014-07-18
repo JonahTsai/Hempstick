@@ -31,8 +31,8 @@
 
 // PIN Configuration
 #ifdef CONF_BOARD_SAM4S_XPLAIN_PRO
-#	define CONF_NUM_PINS									13
-#	define CONF_TOTAL_NUM_BUTTONS							24
+#	define CONF_NUM_PINS									15
+#	define CONF_TOTAL_NUM_BUTTONS							32
 #	define LED0_GPIO										PIO_PC23_IDX
 #	define CONF_SSC_CLOCK_SOURCE_ID							ID_TC4
 #	define CONF_SSC_CLOCK_TC								TC1

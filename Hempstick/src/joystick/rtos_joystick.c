@@ -88,49 +88,15 @@ void joystick_adc_task(void* parameters) {
 		
 		xSemaphoreTake(g_adc_data.mutex, portMAX_DELAY); // lock down the data protection mutex	
 
-
-		uint16_t adc0_value, adc1_value, adc2_value, adc3_value, adc4_value, adc5_value, adc6_value, adc7_value;
-		
-		adc0_value = g_adc_data.data[0];
-		adc1_value = g_adc_data.data[1];
-		adc2_value = g_adc_data.data[2];
-		adc3_value = g_adc_data.data[3];
-		adc4_value = g_adc_data.data[4];
-		adc5_value = g_adc_data.data[5];
-		adc6_value = g_adc_data.data[6];
-		adc7_value = g_adc_data.data[7];
-		
-		// X
-		g_rtos_joystick_control.joystick_report[8] = adc0_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[9] = (adc0_value & 0xFF00) >> 8;
-	
-		// Y
-		g_rtos_joystick_control.joystick_report[10] = adc1_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[11] = (adc1_value & 0xFF00) >> 8;
-	
-		// Z
-		g_rtos_joystick_control.joystick_report[12] = adc2_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[13] = (adc2_value & 0xFF00) >> 8;
-		
-		// Rx
-		g_rtos_joystick_control.joystick_report[14] = adc3_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[15] = (adc3_value & 0xFF00) >> 8;
-		
-		// Ry
-		g_rtos_joystick_control.joystick_report[16] = adc4_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[17] = (adc4_value & 0xFF00) >> 8;
-		
-		// Rz
-		g_rtos_joystick_control.joystick_report[18] = adc5_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[19] = (adc5_value & 0xFF00) >> 8;
-		
-		// Slider
-		g_rtos_joystick_control.joystick_report[20] = adc6_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[21] = (adc6_value & 0xFF00) >> 8;
-		
-		// Dial
-		g_rtos_joystick_control.joystick_report[22] = adc7_value & 0x00FF;
-		g_rtos_joystick_control.joystick_report[23] = (adc7_value & 0xFF00) >> 8;
+		for(uint16_t i = 0; i < HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES; i++) {
+			uint16_t usb_axis_num = g_adc_data.channel_mapping[i];
+			if(usb_axis_num < HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES) {
+				uint16_t adc_value = g_adc_data.data[i];
+				
+				g_rtos_joystick_control.joystick_report[HID_JOYSTICK_REPORT_ADC_BYTE_OFFSET + usb_axis_num * 2] = adc_value & 0x00FF;
+				g_rtos_joystick_control.joystick_report[HID_JOYSTICK_REPORT_ADC_BYTE_OFFSET + usb_axis_num * 2 + 1] = (adc_value & 0xFF00) >> 8;
+			}
+		}
 
 		xSemaphoreGive(g_adc_data.mutex);
 		
