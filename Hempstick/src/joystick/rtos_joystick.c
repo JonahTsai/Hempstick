@@ -88,7 +88,7 @@ void joystick_adc_task(void* parameters) {
 		
 		xSemaphoreTake(g_adc_data.mutex, portMAX_DELAY); // lock down the data protection mutex	
 
-		for(uint16_t i = 0; i < HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES; i++) {
+		for(uint16_t i = 0; i < MAX_ADC_CHANNEL; i++) {
 			uint16_t usb_axis_num = g_adc_data.channel_mapping[i];
 			if(usb_axis_num < HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES) {
 				uint16_t adc_value = g_adc_data.data[i];
