@@ -55,8 +55,8 @@
 
 //! Device definition (mandatory)
 #define  USB_DEVICE_VENDOR_ID             0x44F
-#define  USB_DEVICE_PRODUCT_ID            0xB10A
-#define  USB_DEVICE_MAJOR_VERSION         8
+#define  USB_DEVICE_PRODUCT_ID            0x400
+#define  USB_DEVICE_MAJOR_VERSION         9
 #define  USB_DEVICE_MINOR_VERSION         0
 #define  USB_DEVICE_POWER                 100 // Consumption on Vbus line (mA)
 #define  USB_DEVICE_ATTR                  \
@@ -84,13 +84,15 @@
 //@}
 
 // The HID report descriptor's size, in bytes.
-#define HID_REPORT_DESCRIPTOR_SIZE		61
+#define HID_REPORT_DESCRIPTOR_SIZE		73
 
 // The HID report itself's size, in bytes.
-#define UDI_HID_JOYSTICK_REPORT_SIZE	24
+#define UDI_HID_JOYSTICK_REPORT_SIZE	25
 
 // You must calculate the byte in the HID report about where the ADC report starts, and tell the module where the byte offset starts. The index starts with 0.
-#define HID_JOYSTICK_REPORT_ADC_BYTE_OFFSET		8
+#define HID_JOYSTICK_REPORT_ADC_BYTE_OFFSET		9
+
+#define HID_JOYSTICK_HAT_SWITCH1_BYTE_OFFSET	8
 
 // You must tell it how many ADC axes you have in the HID report.
 #define HID_JOYSTICK_REPORT_TOTAL_NUM_ADC_AXES	8

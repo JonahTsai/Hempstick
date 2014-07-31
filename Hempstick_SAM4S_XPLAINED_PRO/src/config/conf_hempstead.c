@@ -36,9 +36,18 @@ hw_pin_configuration_table g_hw_pin_conf_table = {
 			{.pin = PIO_PA19_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = PIO_PERIPH_A},  // SSC RK, same as ADC 2. On the SAM4S, this is Ext1:8. On the TM stick, this is the Red wire, pin 3.
 
 			
+			
 			// {.pin = PIO_PB26_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}, // Hard button on PIO pin. SAM Cortex M series of MCUs have the default to be input on reset. We want the debounce on, so we need to list it here, aside from being explicit.
 			{.pin = PIO_PA24_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
-			{.pin = PIO_PA25_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}
+			{.pin = PIO_PA25_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA23_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA1_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA11_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA13_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA12_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PA14_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PC19_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)},
+			{.pin = PIO_PC27_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}
 		},
 };
 
@@ -47,12 +56,14 @@ hw_pin_configuration_table g_hw_pin_conf_table = {
 rtos_button_data_t g_rtos_button_data = {
 	.data = NULL,
 	.num_button = 0,
+	.hat_data = NULL,
+	.num_hat = CONF_NUM_HAT,
 	.mutex = NULL,
 	.rtos_internal_task_semaphore = NULL,
 	.rtos_task_semaphore = NULL,
 #ifdef ID_PIOA
 	.ports[0].button_conf[0].flags =  0x0000,
-	.ports[0].button_conf[1].flags =  0x0000,
+	.ports[0].button_conf[1].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[1].data_position = 21,
 	.ports[0].button_conf[2].flags =  0x0000,
 	.ports[0].button_conf[3].flags =  0x0000,
 	.ports[0].button_conf[4].flags =  0x0000,
@@ -62,10 +73,10 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[0].button_conf[8].flags =  0x0000,
 	.ports[0].button_conf[9].flags =  0x0000,
 	.ports[0].button_conf[10].flags =  0x0000,
-	.ports[0].button_conf[11].flags =  0x0000,
-	.ports[0].button_conf[12].flags =  0x0000,
-	.ports[0].button_conf[13].flags =  0x0000,
-	.ports[0].button_conf[14].flags =  0x0000,
+	.ports[0].button_conf[11].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[11].data_position = 22,
+	.ports[0].button_conf[12].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[12].data_position = 24,
+	.ports[0].button_conf[13].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[13].data_position = 23,
+	.ports[0].button_conf[14].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[14].data_position = 25,
 	.ports[0].button_conf[15].flags =  0x0000,
 	.ports[0].button_conf[16].flags =  0x0000,
 	.ports[0].button_conf[17].flags =  0x0000,
@@ -74,9 +85,9 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[0].button_conf[20].flags =  0x0000,
 	.ports[0].button_conf[21].flags =  0x0000,
 	.ports[0].button_conf[22].flags =  0x0000,
-	.ports[0].button_conf[23].flags =  0x0000,
-	.ports[0].button_conf[24].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[24].data_position = 30,
-	.ports[0].button_conf[25].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[25].data_position = 31,
+	.ports[0].button_conf[23].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[23].data_position = 20,
+	.ports[0].button_conf[24].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[24].data_position = 18,
+	.ports[0].button_conf[25].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[0].button_conf[25].data_position = 19,
 	/*
 	.ports[0].button_conf[24].flags =  0x0000,
 	.ports[0].button_conf[25].flags =  0x0000,
@@ -144,7 +155,7 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[2].button_conf[16].flags =  0x0000,
 	.ports[2].button_conf[17].flags =  0x0000,
 	.ports[2].button_conf[18].flags =  0x0000,
-	.ports[2].button_conf[19].flags =  0x0000,
+	.ports[2].button_conf[19].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[2].button_conf[19].data_position = 26,
 	.ports[2].button_conf[20].flags =  0x0000,
 	.ports[2].button_conf[21].flags =  0x0000,
 	.ports[2].button_conf[22].flags =  0x0000,
@@ -152,7 +163,7 @@ rtos_button_data_t g_rtos_button_data = {
 	.ports[2].button_conf[24].flags =  0x0000,
 	.ports[2].button_conf[25].flags =  0x0000,
 	.ports[2].button_conf[26].flags =  0x0000,
-	.ports[2].button_conf[27].flags =  0x0000,
+	.ports[2].button_conf[27].flags =  RTOS_BUTTON_PIN_ENABLED_MASK, .ports[2].button_conf[27].data_position = 27,
 	.ports[2].button_conf[28].flags =  0x0000,
 	.ports[2].button_conf[29].flags =  0x0000,
 	.ports[2].button_conf[30].flags =  0x0000,

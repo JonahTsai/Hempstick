@@ -123,6 +123,11 @@ void joystick_button_task(void* parameters) {
 			current_button_value = g_rtos_button_data.data[i];
 			g_rtos_joystick_control.joystick_report[i] = current_button_value;
 		}
+		
+		// now deal with the hat switches.
+		for(size_t i = 0; i < g_rtos_button_data.num_hat; i++) {
+			g_rtos_joystick_control.joystick_report[HID_JOYSTICK_HAT_SWITCH1_BYTE_OFFSET + i] = g_rtos_button_data.hat_data[i];
+		}
 		xSemaphoreGive(g_rtos_button_data.mutex);
 		xSemaphoreGive(g_rtos_joystick_control.mutex);	
 	}

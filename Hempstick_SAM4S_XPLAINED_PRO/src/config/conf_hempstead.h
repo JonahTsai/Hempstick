@@ -29,10 +29,17 @@
 #define	CONF_BOARD_SAM4S_XPLAIN_PRO						1
 #undef CONF_BOARD_ARDUINO_DUE
 
+
+#define CONF_ENABLE_TM_STICK_IN_BUTTON					1
+
+
 // PIN Configuration
 #ifdef CONF_BOARD_SAM4S_XPLAIN_PRO
-#	define CONF_NUM_PINS									15
+#	define CONF_NUM_PINS									23
 #	define CONF_TOTAL_NUM_BUTTONS							32
+#	if (CONF_ENABLE_TM_STICK_IN_BUTTON)
+#		define CONF_NUM_HAT										1
+#	endif
 #	define LED0_GPIO										PIO_PC23_IDX
 #	define CONF_SSC_CLOCK_SOURCE_ID							ID_TC4
 #	define CONF_SSC_CLOCK_TC								TC1
@@ -40,6 +47,9 @@
 #elif defined(CONF_BOARD_ARDUINO_DUE)
 #	define CONF_NUM_PINS									22
 #	define CONF_TOTAL_NUM_BUTTONS							28
+#	if (CONF_ENABLE_TM_STICK_IN_BUTTON)
+#		define CONF_NUM_HAT										1
+#	endif
 // #	define LED0_GPIO										PIO_PC23_IDX
 #	define CONF_SSC_CLOCK_SOURCE_ID							ID_TC8
 #	define CONF_SSC_CLOCK_TC								TC2
@@ -47,7 +57,7 @@
 #endif
 
 
-#define CONF_ENABLE_TM_STICK_IN_BUTTON					1
+
 
 // This is how many bits of ADC sample decimation will be.
 // It's basically a low pass filter with overlapping running average.
