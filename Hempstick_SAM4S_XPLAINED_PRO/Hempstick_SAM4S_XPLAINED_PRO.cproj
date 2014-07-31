@@ -607,22 +607,37 @@
     <Compile Include="src\ASF\common\services\sleepmgr\sam\sleepmgr.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\config\conf_board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_clock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_hempstead.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_hempstead.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_mma7341l.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\conf_sleepmgr.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\config\conf_usb.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\config\conf_usb.h">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="src\config\FreeRTOSConfig.h">
+    <Compile Include="src\config\FreeRTOSConfig.h">
       <SubType>compile</SubType>
-    </None>
+    </Compile>
     <None Include="src\ASF\thirdparty\freertos\freertos-7.3.0\ATMEL-disclaimer.txt">
       <SubType>compile</SubType>
     </None>
     <None Include="src\ASF\thirdparty\freertos\freertos-7.3.0\readme.txt">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\config\conf_sleepmgr.h">
       <SubType>compile</SubType>
     </None>
     <None Include="src\ASF\common\services\sleepmgr\sleepmgr.h">
@@ -779,12 +794,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ASF\thirdparty\freertos\freertos-7.3.0\source\timers.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\config\conf_hempstead.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\config\conf_hempstead.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="..\Hempstick\src\joystick\TestHempJoy2.hid">
@@ -1161,15 +1170,6 @@
       <SubType>compile</SubType>
     </None>
     <None Include="src\asf.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\config\conf_board.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\config\conf_clock.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\config\conf_mma7341l.h">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>
