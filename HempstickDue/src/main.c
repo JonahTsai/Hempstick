@@ -84,7 +84,7 @@ static void setup_hardware(void)
 	board_init();
 	
 	configure_pins();
-#if CONF_ENABLE_TM_STICK
+#if (CONF_ENABLE_TM_STICK == 1)
 	rtos_joystick_init(true);
 #else
 	rtos_joystick_init(false);

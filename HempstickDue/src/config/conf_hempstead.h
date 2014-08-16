@@ -37,11 +37,11 @@
 #	define CONF_SSC_CLOCK_TC								TC1
 #	define CONF_SSC_CLOCK_CHANNEL							1
 #elif defined(CONF_BOARD_ARDUINO_DUE)
-#	if CONF_ENABLE_TM_STICK
+#	if (CONF_ENABLE_TM_STICK == 1)
 #		define CONF_NUM_PINS								22
 #		define CONF_TOTAL_NUM_BUTTONS						28
 #	else
-#		define CONF_NUM_PINS								49
+#		define CONF_NUM_PINS								48
 #		define CONF_TOTAL_NUM_BUTTONS						32
 #	endif
 #	define CONF_SSC_CLOCK_SOURCE_ID							ID_TC8
