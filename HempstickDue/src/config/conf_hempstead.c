@@ -65,7 +65,7 @@ hw_pin_configuration_table g_hw_pin_conf_table = {
 		{.pin = PIO_PA15_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}, // Arduino Due, Digital pin 24
 		{.pin = PIO_PD0_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}, // Arduino Due, Digital pin 25
 		{.pin = PIO_PD1_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}, // Arduino Due, Digital pin 26
-#if CONF_ENABLE_TM_STICK
+#if (CONF_ENABLE_TM_STICK == 1)
 		// Nothing to do.
 #else
 		{.pin = PIO_PD2_IDX, .conf = HW_PIN_ENABLE_MASK, .mode = (PIO_TYPE_PIO_INPUT | PIO_PULLUP | PIO_DEBOUNCE)}, // Arduino Due, Digital pin 27
